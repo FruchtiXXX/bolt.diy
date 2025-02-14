@@ -10,6 +10,8 @@ RUN corepack enable pnpm && \
 COPY package.json pnpm-lock.yaml ./
 
 # Instalar dependências
+ENV COREPACK_ENABLE_STRICT_SIGNATURE_CHECKS=false
+
 RUN pnpm install
 
 # Copiar código  fonte e scripts
